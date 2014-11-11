@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://demo.loway.ch/" />
+<title>QueueMetrics</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">QueueMetrics</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/queuemetrics-livedemo/autenticazione.jsp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=AUTH_logon</td>
+	<td>demo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=AUTH_password</td>
+	<td>demo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input.actButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=CODA_F_agenteFiltro</td>
+	<td>label=Mara (301)</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Today</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>var months = []; months[0]=&quot;January&quot;; months[1]=&quot;February&quot;; months[2]=&quot;March&quot;; months[3]=&quot;April&quot;; months[4]=&quot;May&quot;; months[5]=&quot;June&quot;; months[6]=&quot;July&quot;; months[7]=&quot;August&quot;; months[8]=&quot;September&quot;; months[9]=&quot;October&quot;; months[10]=&quot;November&quot;; months[11]=&quot;December&quot;; var date = new Date();&nbsp;&nbsp;var day = date.getDate();&nbsp;&nbsp;if (day &lt; 10) 	day = '0' + day;&nbsp;&nbsp;var month = months[date.getMonth()];	 	 date1 = month + ' ' + day + ' ' + date.getFullYear() + ', 00:00';</td>
+	<td>date</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${date}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//table[@id='x']/tbody/tr[4]/td[2]</td>
+	<td>pageDate</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>alert(storedVars['date'] == storedVars['pageDate']? 'Matching':'Not Matching');</td>
+	<td>AreTheSame</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
